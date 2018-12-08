@@ -174,6 +174,35 @@ mysql config
         execution time (avg/stddev):   300.1683/0.11
 
 
+##### after enable mysql binlog.so the binlog may eat a lot of time when disk is not fast enough
+
+    SQL statistics:
+    queries performed:
+        read:                            628259
+        write:                           651866
+        other:                           97198
+        total:                           1377323
+    transactions:                        48535  (161.52 per sec.)
+    queries:                             1377323 (4583.65 per sec.)
+    ignored errors:                      235    (0.78 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+    General statistics:
+        total time:                          300.4840s
+        total number of events:              48535
+
+    Latency (ms):
+            min:                                    1.24
+            avg:                                  395.93
+            max:                                 5045.01
+            95th percentile:                     1013.60
+            sum:                             19216658.71
+
+    Threads fairness:
+        events (avg/stddev):           758.3594/21.84
+        execution time (avg/stddev):   300.2603/0.12
+
+
 ### PS
 
 mysql 5.7 faster than mariadb.I think problem is mariadb default enable bin log.mysql do not
